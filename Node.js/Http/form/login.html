@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Input Wave</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="box">
+      <h2>Please Login</h2>
+      <form action="http://127.0.0.1:3000/login" method="post">
+        <div class="form-control">
+          <input type="text" name="user" id="user" required />
+          <label for="user">Email</label>
+        </div>
+        <div class="form-control">
+          <input type="password" name="Password" id="Password" required />
+          <label for="Password">Password</label>
+        </div>
+        <input type="submit" name="btn" id="btn" value="Login" />
+
+        <p class="text">
+          Don't have an account? <a href="javascirpt:;">Register</a>
+        </p>
+      </form>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //给定的字符串
+      let str = 'abaassdffggghhjjkkgfddsssss3444343';
+
+      //1. 字符串的长度
+      console.log(str.length);
+
+      //2. 取出指定位置的字符，如：0，3，5，9
+      console.log(str[0]);
+      console.log(str[3]);
+      console.log(str[5]);
+      console.log(str[9]);
+
+      //3. 查找指定字符是否在以上字符串中存在，如：i，c，b等
+      function isInString(c) {
+        if (str.indexOf(c) !== -1) {
+          return 'Yes';
+        } else {
+          return 'No';
+        }
+      }
+      console.log(isInString('i'));
+      console.log(isInString('c'));
+      console.log(isInString('b'));
+
+      //4. 替换指定的字符，如：g替换为22，ss替换为b
+      function replaceChar(a, b) {
+        let newStr = str;
+        while (newStr.indexOf(a) !== -1) {
+          newStr = newStr.replace(a, b);
+        }
+        return newStr;
+      }
+      console.log(replaceChar('g', '22'));
+      console.log(replaceChar('ss', 'b'));
+
+      //5. 截取指定开始位置到结束位置的字符串，如：取得1-5的字符串
+      console.log(str.slice(1, 5 + 1));
+
+      //6. 找出以上字符串中出现的次数最多的字符和出现的次数
+      //(1)for检索出每一个字符
+      //(2)若该字符不为对象的属性名，则添加到对象中并让值为1
+      //   若已存在则值+1
+      let chars = {};
+      let max = 0;
+      let maxChar;
+      for (let i = 0; i < str.length; i++) {
+        if (chars[str[i]]) {
+          chars[str[i]]++;
+        } else {
+          chars[str[i]] = 1;
+        }
+        for (let key in chars) {
+          if (chars[key] > max) {
+            max = chars[key];
+            maxChar = key;
+          }
+        }
+      }
+      console.log('出现最多的字符是' + maxChar + '，出现次数为' + max + '次');
+    </script>
+  </body>
+</html>

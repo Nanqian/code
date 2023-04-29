@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>交互</title>
+  </head>
+
+  <style>
+    .container {
+      width: 400px;
+      margin: auto;
+      text-align: center;
+    }
+    .timeBox {
+      width: 400px;
+      height: 50px;
+      color: white;
+      background-color: #555;
+      text-align: center;
+      line-height: 50px;
+    }
+  </style>
+
+  <body>
+    <div class="container">
+      <div class="timeBox">这里是时间</div>
+      <button class="changeTime">点我一下</button>
+    </div>
+
+    <script>
+      const TIMEBOX = document.querySelector('.timeBox');
+      const CHANGETIME = document.querySelector('.changeTime');
+
+      CHANGETIME.onclick = function () {
+        TIMEBOX.innerText = getDate();
+      };
+
+      function getDate() {
+        let date = new Date();
+
+        let year = date.getFullYear();
+        let month = date.getMonth();
+        let day = date.getDate();
+        let hour = date.getHours();
+        let minute = date.getMinutes();
+        let second = date.getSeconds();
+        let week = date.getDay();
+        weeks = [
+          '星期日',
+          '星期一',
+          '星期二',
+          '星期三',
+          '星期四',
+          '星期五',
+          '星期六',
+        ];
+
+        return `现在时间是${year}年 ${month}月 ${day}日 ${hour}:${minute}:${second} ${weeks[week]}`;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+/* body {
+  width: 800px;
+  margin: auto;
+} */
+
+.header,
+.nav,
+.container,
+.footer {
+  float: left;
+  width: 100%;
+}
+
+.header {
+  height: 100px;
+  background-color: #c0d695;
+  text-align: center;
+}
+
+.nav {
+  background-color: #ab95d6;
+}
+
+.nav a {
+  color: #95d6ab;
+  padding: 10px 20px;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.nav a:hover {
+  background-color: #c0d695;
+  color: #ab95d6;
+}
+
+.content {
+  margin: 0 205px;
+}
+
+.lside {
+  width: 200px;
+  float: left;
+}
+
+.rside {
+  width: 200px;
+  float: right;
+}
+
+.lside,
+.rside,
+.content {
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.footer {
+  padding: 10px;
+  background: #c0d695;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* 当浏览宽度小于700时，三个栏进行竖排 */
+@media screen and (max-width:700px) {
+
+  .lside,
+  .rside,
+  .content {
+    width: 100%;
+    margin: 0;
+  }
+}

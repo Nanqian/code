@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- 导入 vue 文件 -->
+    <script src="../js/vue.js"></script>
+    <title>Document</title>
+  </head>
+
+  <body>
+    <!-- 被 vm 实例所控制的区域 -->
+    <div id="root">
+      <h1>现在天气很{{weather}}</h1>
+      <button @click="changeWeather">切换天气</button>
+      <p>{{info}}</p>
+    </div>
+
+    <script>
+      // 创建 vm 实例对象
+      const vm = new Vue({
+        el: '#root',
+        data: {
+          weather: '炎热',
+          info: '',
+        },
+        methods: {
+          changeWeather() {
+            this.weather = this.weather == '炎热' ? '凉爽' : '炎热';
+          },
+        },
+        watch: {
+          weather: {
+            handler(newValue, oldValue) {
+              // console.log(
+              //   `刚刚天气很『${oldValue}』，现在很『${newValue}』`
+              // );
+              this.info = `刚刚天气很『${oldValue}』，现在很『${newValue}』`;
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

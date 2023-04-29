@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-size: 50px;
+      }
+      .container {
+        width: 300px;
+        height: 100px;
+        margin: 200px auto;
+        text-align: center;
+      }
+      span {
+      }
+      button {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <span>10</span>
+      <br />
+      <button>开始</button>
+      <button>暂停</button>
+      <button>重置</button>
+    </div>
+
+    <script>
+      let span = document.querySelector('span');
+      let buttons = document.querySelectorAll('button');
+
+      buttons[0].addEventListener('click', () => {
+        let timer = setInterval(function () {
+          span.innerText = span.innerText - 1;
+          if (span.innerText === '0') {
+            clearInterval(timer);
+            span.style.color = 'red';
+            span.innerText = '时间到了';
+          }
+        }, 1000);
+        buttons[1].onclick = () => clearInterval(timer);
+        buttons[2].addEventListener('click', () => {
+          clearInterval(timer);
+          span.style.color = 'black';
+          span.innerText = '10';
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+.iconfont {
+  font-family: 'iconfont' !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(240, 240, 240);
+  font-family: 'Muli', sans-serif;
+}
+
+h1 {
+  margin: 50px 0 20px;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* width: 500px; */
+  margin: 0 auto;
+}
+
+.faq {
+  position: relative;
+  width: 600px;
+  height: 85px;
+  margin: 10px 0;
+  border: 1px solid #9fa4a8;
+  border-radius: 10px;
+  overflow-y: hidden;
+  transition: background-color 0.3s;
+}
+
+.faq h3 {
+  padding: 30px;
+}
+
+.faq p {
+  padding-left: 30px;
+}
+
+.faq button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.show {
+  height: 130px;
+  box-shadow: 0 3px 3px #9fa4a8;
+  background: url('./pngsucai_4386240_4d0dba.png') no-repeat 5% center / 20%;
+  background-color: #fff;
+}

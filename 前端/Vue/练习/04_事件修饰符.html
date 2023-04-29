@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- 导入 vue 文件 -->
+    <script src="../js/vue.js"></script>
+    <title>Document</title>
+
+    <style>
+      * {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- 
+    Vue中的事件修饰符：
+      1.prevent: 阻止默认事件（常用）
+      2.stop: 阻止事件冒泡（常用）
+      3.once: 事件只触发一次（常用）
+      4.capture: 使用事件的捕获模式
+      5.self: 只有event.target是当前操作的元素时才触发事件
+      6.passive: 事件的默认行为立即执行，无需等待事件的回调执行完毕
+   -->
+    <!-- 被 vm 实例所控制的区域 -->
+    <div id="root">
+      <a @click.prevent="showInfo" href="//baidu.com/"
+        >百度一下，但阻止默认事件</a
+      >
+
+      <div @click="showInfo" style="background-color: lightblue">
+        <button @click.stop="showInfo">点我提示信息，但阻止冒泡</button>
+      </div>
+
+      <button @click.once="showInfo">点我提示信息，但一次性</button>
+    </div>
+
+    <script>
+      // 创建 vm 实例对象
+      const vm = new Vue({
+        el: '#root',
+        data: {},
+        methods: {
+          showInfo() {
+            alert('你好！');
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

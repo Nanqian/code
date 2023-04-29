@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .loginBtn {
+        height: 30px;
+        margin-top: 15px;
+        text-align: center;
+        line-height: 30px;
+      }
+      .login {
+        font-size: 25px;
+        letter-spacing: 10px;
+        color: #666;
+        text-decoration: none;
+      }
+
+      .cover {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      .loginBox {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #fff;
+        width: 500px;
+        height: 300px;
+        border: 1px solid #666;
+      }
+      .loginBox .title {
+        display: inline-block;
+        width: 100%;
+        margin: 10px 10px;
+        text-align: center;
+        user-select: none;
+      }
+      .loginBox .close {
+        display: inline-block;
+        position: absolute;
+        top: -15px;
+        right: -15px;
+        width: 30px;
+        height: 30px;
+        border: 3px solid #666;
+        border-radius: 50%;
+        background: #fff;
+        font-style: normal;
+        font-size: 25px;
+        text-align: center;
+        line-height: 30px;
+        cursor: pointer;
+      }
+      .loginBox form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .loginBox form:nth-child(n) {
+        flex: 0 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="loginBtn">
+      <a href="javascript:;" class="login">点击登录</a>
+    </div>
+    <!-- 遮盖层 -->
+    <div class="cover"></div>
+    <!-- 登录框 -->
+    <div class="loginBox">
+      <h1 class="title">登 录</h1>
+      <form action="#">
+        <label for="user">账号</label>
+        <input type="text" name="user" id="user" />
+        <label for="">密码</label>
+        <input type="text" name="password" id="password" />
+        <input type="submit" value="登录" />
+      </form>
+      <i class="close">X</i>
+    </div>
+
+    <script>
+      let cover = document.querySelector('.cover');
+      let login = document.querySelector('.login');
+      let loginBox = document.querySelector('.loginBox');
+      let title = document.querySelector('.loginBox>.title');
+      let loginBoxClose = document.querySelector('.loginBox>.close');
+
+      login.addEventListener('click', () => {
+        loginBox.style.display = 'block';
+        cover.style.display = 'block';
+      });
+      loginBoxClose.addEventListener('click', () => {
+        loginBox.style.display = 'none';
+        cover.style.display = 'none';
+      });
+
+      //移动登录框
+      //改变鼠标样式
+      title.addEventListener(
+        'mousemove',
+        () => (loginBox.style.cursor = 'move')
+      );
+      //开始移动
+      title.addEventListener('mousedown', function (e) {
+        // 获得鼠标点下的位置，这个位置是不变的
+        //这里因为css里用了transform: translate(-50%, -50%)，导致直接获取的offsetX和offsetY改变，所以要用下面这个方式获取x，y
+        let x = e.clientX - loginBox.offsetLeft;
+        let y = e.clientY - loginBox.offsetTop;
+        function drag(e) {
+          loginBox.style.top = `${e.clientY - y}px`;
+          loginBox.style.left = `${e.clientX - x}px`;
+        }
+        //鼠标移动，改变位置
+        document.addEventListener('mousemove', drag);
+
+        //鼠标抬起，取消移动
+        document.addEventListener('mouseup', () => {
+          document.removeEventListener('mousemove', drag);
+        });
+      });
+
+      //取消移动
+      title.addEventListener('mouseout', () => {
+        loginBox.style.cursor = 'default';
+      });
+    </script>
+  </body>
+</html>

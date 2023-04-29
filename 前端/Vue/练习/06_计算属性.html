@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- 导入 vue 文件 -->
+    <script src="../js/vue.js"></script>
+    <title>Document</title>
+  </head>
+
+  <body>
+    <!-- 被 vm 实例所控制的区域 -->
+    <div id="root">
+      姓：<input type="text" v-model="firstName" /> <br /><br />
+      名：<input type="text" v-model="lastName" /> <br /><br />
+      全名：{{fullName}}
+      <hr />
+      修改全名：<input type="text" v-model="fullName" />
+    </div>
+
+    <script>
+      // 创建 vm 实例对象
+      const vm = new Vue({
+        el: '#root',
+        data: {
+          firstName: 'Foo',
+          lastName: 'Bar',
+        },
+        computed: {
+          fullName: {
+            get() {
+              return this.firstName + ' ' + this.lastName;
+            },
+            set(value) {
+              let arr = value.split(' ');
+              this.firstName = arr[0];
+              this.lastName = arr[1];
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

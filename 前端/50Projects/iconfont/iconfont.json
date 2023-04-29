@@ -1,0 +1,79 @@
+{
+  "id": "3534631",
+  "name": "50project",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "4936985",
+      "name": "twitter",
+      "font_class": "twitter",
+      "unicode": "e882",
+      "unicode_decimal": 59522
+    },
+    {
+      "icon_id": "12579595",
+      "name": "youtube",
+      "font_class": "youtube",
+      "unicode": "e7b2",
+      "unicode_decimal": 59314
+    },
+    {
+      "icon_id": "15378341",
+      "name": "facebook",
+      "font_class": "facebook",
+      "unicode": "eb8d",
+      "unicode_decimal": 60301
+    },
+    {
+      "icon_id": "4936482",
+      "name": "close-circle-fill",
+      "font_class": "close-circle-fill",
+      "unicode": "e844",
+      "unicode_decimal": 59460
+    },
+    {
+      "icon_id": "6049799",
+      "name": "下拉",
+      "font_class": "xiala",
+      "unicode": "e624",
+      "unicode_decimal": 58916
+    },
+    {
+      "icon_id": "278288",
+      "name": "menu",
+      "font_class": "menu",
+      "unicode": "e628",
+      "unicode_decimal": 58920
+    },
+    {
+      "icon_id": "4503657",
+      "name": "close",
+      "font_class": "close",
+      "unicode": "e6bf",
+      "unicode_decimal": 59071
+    },
+    {
+      "icon_id": "6806459",
+      "name": "Mail",
+      "font_class": "Mail",
+      "unicode": "eae4",
+      "unicode_decimal": 60132
+    },
+    {
+      "icon_id": "7008946",
+      "name": "homepage_fill",
+      "font_class": "homepage_fill",
+      "unicode": "e702",
+      "unicode_decimal": 59138
+    },
+    {
+      "icon_id": "7683853",
+      "name": "user",
+      "font_class": "user",
+      "unicode": "e626",
+      "unicode_decimal": 58918
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>长表单布局</title>
+
+  <style>
+    .formBox {
+      display: flex;
+      flex-direction: column;
+      text-align: right;
+    }
+    .formBox div {
+      display: flex;
+      justify-content: flex-end;
+      width: 300px;
+      flex: 0 0 50px;
+    }
+    .formBox div input {
+      height: 15px;
+    }
+  </style>
+</head>
+<body>
+<form action = "">
+  <div class="formBox">
+    <div>
+      <label for = "User">账号：</label>
+      <input type = "text" id = "User">
+    </div>
+    <div>
+      <label for = "password">请输入密码：</label>
+      <input type = "text" id = "password">
+    </div>
+  </div>
+</form>
+</body>
+</html>

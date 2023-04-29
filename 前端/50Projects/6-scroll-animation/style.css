@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgb(239, 237, 214);
+  overflow-x: hidden;
+}
+
+h1 {
+  margin: 10px;
+}
+
+.box {
+  width: 400px;
+  height: 200px;
+  background-color: rgb(70, 130, 180);
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  line-height: 200px;
+  transition: transform 0.4s ease;
+}
+
+.box:nth-child(odd) {
+  transform: translate(-500%);
+}
+.box:nth-child(even) {
+  transform: translate(500%);
+}
+
+.box h2 {
+  font-size: 40px;
+  color: #fff;
+}
+
+.box.show {
+  transform: translate(0);
+}

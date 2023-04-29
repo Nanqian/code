@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>数组去重</title>
+  </head>
+  <body>
+    <script>
+      //一个有重复元素的数组
+      // let arr = ["a", "c", "b", "a", "x", "x"];
+      let arr = ['pink', 'blue', 'white', 'pink'];
+      //核心：检索旧数组，若 新数组.indexOf() 返回-1则说明没有这个元素
+      let newArr = [];
+      for (let i = 0; i < arr.length; i++) {
+        if (newArr.indexOf(arr[i]) === -1) {
+          newArr.push(arr[i]);
+        }
+      }
+      console.log(newArr);
+    </script>
+  </body>
+</html>

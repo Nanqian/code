@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(#eafbff 50%, #5290f9 50%);
+}
+
+#box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  padding: 20px;
+  border-radius: 3px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgb(0 0 0 / 30%);
+  transition: width 0.6s linear;
+  overflow-x: hidden;
+}
+
+ul {
+  display: flex;
+  width: 0;
+  transition: width 0.6s linear;
+}
+
+ul li {
+  margin: 0 10px;
+  transform: rotateY(0deg);
+  opacity: 0;
+  transition: transform 0.6s linear, opacity 0.6s linear;
+}
+
+ul li a {
+  color: black;
+}
+
+#close {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.line {
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background-color: #5290f9;
+  top: 13px;
+  left: 6px;
+  transition: transform 0.6s linear;
+}
+
+.line2 {
+  top: auto;
+  bottom: 10px;
+}
+
+#box.active {
+  width: 350px;
+}
+
+#box.active ul {
+  width: 100%;
+}
+
+#box.active ul li {
+  width: 100%;
+  transform: rotateY(720deg);
+  opacity: 1;
+}
+
+#box.active .line1 {
+  transform: rotate(765deg) translateY(3.5px);
+}
+
+#box.active .line2 {
+  transform: rotate(-765deg) translateY(-4.5px);
+}

@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  background-color: black;
+}
+
+.navbar {
+  /* 定位及大小 */
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 50px;
+  width: 100%;
+  /* 样式 */
+  background-color: white;
+  color: #555;
+  /* 保持在最顶层 */
+  z-index: 1001;
+  /* 弹性布局 */
+  display: flex;
+  justify-content: center;
+
+  line-height: normal;
+}
+
+.navbar-items {
+  /* 布局 */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  flex: 1 0 auto;
+  /* 颜色与父元素相同 */
+  color: inherit;
+}
+
+
+.navbar-items .navbar-item {
+  position: relative;
+  /* 布局 */
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  /* 颜色与父元素相同 */
+  columns: inherit;
+  /* 鼠标小手 */
+  cursor: pointer;
+}
+
+.navbar-item .popup {
+  /* 定位 */
+  position: absolute;
+  /* 样式 */
+  color: black;
+  background-color: white;
+}

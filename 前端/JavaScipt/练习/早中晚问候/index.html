@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello</title>
+  </head>
+  <body>
+    <h1>你好</h1>
+    <img src="" title="" />
+
+    <script>
+      //获取元素
+      let text = document.querySelector('h1');
+      let photo = document.querySelector('img');
+
+      //获取用户打开网页的时间hour
+      let dateObj = new Date();
+      let hourNow = dateObj.getHours();
+      // let hourNow = 13;
+      // console.log(hourNow);
+
+      //判断早上下午还是晚上
+      if (hourNow >= 6 && hourNow < 12) {
+        text.innerHTML = '早上好';
+        photo.src = 'image/morning.jpg';
+        photo.title = 'Good Morning';
+      } else if (hourNow >= 12 && hourNow < 18) {
+        text.innerHTML = '下午好';
+        photo.src = 'image/afternoon.jpg';
+        photo.title = 'Good Afternoon';
+      } else {
+        text.innerHTML = '晚上好';
+        photo.src = 'image/night.jpg';
+        photo.title = 'Good Night';
+      }
+    </script>
+  </body>
+</html>

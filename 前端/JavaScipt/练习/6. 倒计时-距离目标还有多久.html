@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>倒计时</title>
+  </head>
+
+  <body>
+    <p id="p1"></p>
+    <p id="p2"></p>
+    <script>
+      const p1 = document.getElementById('p1');
+      const p2 = document.getElementById('p2');
+      //结束时间（戳）
+      let theDay = '2022-8-29 0:0:0';
+      let deadline = +new Date(theDay);
+      p1.innerHTML = '距：' + theDay;
+      setInterval(function () {
+        //现在时间（戳）
+        let nowTime = +new Date();
+        //时间间隔/秒
+        let timeGap = (deadline - nowTime) / 1000;
+        //时间格式转化
+        let days = parseInt(timeGap / 60 / 60 / 24);
+        days = days > 0 && days < 10 ? '0' + days : days;
+        let hours = parseInt((timeGap / 60 / 60) % 24);
+        hours = hours > 0 && hours < 10 ? '0' + hours : hours;
+        let minutes = parseInt((timeGap / 60) % 60);
+        minutes = minutes > 0 && minutes < 10 ? '0' + minutes : minutes;
+        let seconds = parseInt(timeGap % 60);
+        seconds = seconds > 0 && seconds < 10 ? '0' + seconds : seconds;
+        p2.innerHTML = `还有：${days}天${hours}小时${minutes}分${seconds}秒`;
+      }, 1000);
+    </script>
+  </body>
+</html>

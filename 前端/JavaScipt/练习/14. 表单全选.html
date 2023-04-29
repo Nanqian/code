@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>表单全选</title>
+  </head>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    input[type='checkbox'] {
+      width: 15px;
+      height: 15px;
+    }
+    table {
+      width: 250px;
+      margin: 30px auto 0;
+      border-collapse: collapse;
+      text-align: center;
+    }
+    thead {
+      background-color: lightblue;
+      height: 30px;
+    }
+    tbody tr {
+      height: 40px;
+      border-bottom: 1px black dashed;
+    }
+  </style>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <td>
+            <form action="">
+              <label for="selectAll"></label
+              ><input type="checkbox" id="selectAll" />
+            </form>
+          </td>
+          <th>商品</th>
+          <th>价格</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <form action="">
+              <label for="selectAll"></label
+              ><input type="checkbox" class="goods" />
+            </form>
+          </td>
+          <td>Xiaomi 12S Ultra</td>
+          <td>5999</td>
+        </tr>
+        <tr>
+          <td>
+            <form action="">
+              <label for="selectAll"></label
+              ><input type="checkbox" class="goods" />
+            </form>
+          </td>
+          <td>商品</td>
+          <td>价格</td>
+        </tr>
+        <tr>
+          <td>
+            <form action="">
+              <label for="selectAll"></label
+              ><input type="checkbox" class="goods" />
+            </form>
+          </td>
+          <td>商品</td>
+          <td>价格</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script !src="">
+      let selectAll = document.querySelector('#selectAll');
+      let goods = document.querySelectorAll('.goods');
+      for (let i = 0; i < goods.length; i++) {
+        selectAll.onclick = function () {
+          for (let i = 0; i < goods.length; i++) {
+            goods[i].checked = this.checked;
+          }
+        };
+      }
+      for (let i = 0; i < goods.length; i++) {
+        goods[i].onclick = function () {
+          for (let j = 0; j < goods.length; j++) {
+            if (!goods[j].checked) {
+              selectAll.checked = false;
+              break;
+            } else {
+              selectAll.checked = true;
+            }
+          }
+        };
+      }
+    </script>
+  </body>
+</html>

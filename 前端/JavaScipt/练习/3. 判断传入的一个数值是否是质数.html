@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //用户输入数字
+    let num = prompt('请输入一个数字', '2');
+
+    //判断是否为质数的函数
+    //思路：for循环和每一个数相除，最终看因子数是否为2
+    function judgePrime(x) {
+      let factor = 0;
+      for (let i = 1; i <= x; i++) {
+        if (x % i == 0) {
+          factor++;
+        }
+      }
+      if (factor == 2) {
+        return true;
+      }
+      else {
+        return false;
+      }
+    }
+
+    console.log(judgePrime(num));
+
+    //法2：如果这个数能被除了1和自身以外的数整除那它就不是质数
+    function isPrimeNum(num) {
+      for (let i = 2; i < num; i++) {
+        if (num % i == 0) {
+          return false;
+        }
+      }
+      return true;
+    }
+
+    //试验
+    console.log(isPrimeNum(num));
+  </script>
+
+
+</body>
+
+</html>

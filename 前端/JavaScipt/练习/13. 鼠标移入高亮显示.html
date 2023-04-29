@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>基金净值查询</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font: 12px/20px '宋体';
+      }
+      table {
+        width: 60%;
+        margin: 0 auto;
+        margin-top: 30px;
+        text-align: center;
+        border-collapse: collapse;
+      }
+      thead {
+        background-color: #eaf1ff;
+        height: 30px;
+      }
+      thead td {
+        padding: 1px;
+        height: 30px;
+      }
+      tbody td {
+        height: 30px;
+        border-bottom: 1.5px dashed grey;
+      }
+      .highlight {
+        background-color: #eafbff;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 28px">序号</th>
+          <th>基金代码</th>
+          <th>基金名称</th>
+          <th>单位净值</th>
+          <th>积累净值</th>
+          <th>近三个月(%)</th>
+          <th>近六个月(%)</th>
+          <th>近一年(%)</th>
+          <th>今年以来(%)</th>
+          <th>成立以来(%)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>007189</td>
+          <td>南华价值启航纯债债券A</td>
+          <td>2.4342</td>
+          <td>2.5042</td>
+          <td>143.0730</td>
+          <td>144.6000</td>
+          <td>149.0040</td>
+          <td>144.7420</td>
+          <td>160.6300</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>007189</td>
+          <td>南华价值启航纯债债券A</td>
+          <td>2.4342</td>
+          <td>2.5042</td>
+          <td>143.0730</td>
+          <td>144.6000</td>
+          <td>149.0040</td>
+          <td>144.7420</td>
+          <td>160.6300</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>007190</td>
+          <td>南华价值启航纯债债券C</td>
+          <td>2.4694</td>
+          <td>2.5394</td>
+          <td>142.9290</td>
+          <td>144.3170</td>
+          <td>148.4080</td>
+          <td>144.4330</td>
+          <td>164.2150</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>008652</td>
+          <td>长城中债1-3年政金债指数A</td>
+          <td>1.5185</td>
+          <td>1.5185</td>
+          <td>0.4166</td>
+          <td>49.0918</td>
+          <td>49.5617</td>
+          <td>49.1064</td>
+          <td>51.8500</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script>
+      let data = document.querySelector('tbody').querySelectorAll('tr');
+      for (let i = 0; i < data.length; i++) {
+        data[i].onmouseover = () => data[i].classList.add('highlight');
+        data[i].onmouseout = () => data[i].classList.remove('highlight');
+      }
+    </script>
+  </body>
+</html>

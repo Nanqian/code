@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="../js/vue.js"></script>
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="root">
+      <h2>原始n： <span v-bind="n">{{n}}</span></h2>
+      <h2>放大10倍后的n：<span v-big="n">{{n}}</span></h2>
+      <button @click="n++">点我n+1</button>
+    </div>
+
+    <script>
+      const vm = new Vue({
+        el: '#root',
+        data: {
+          n: 1,
+        },
+        directives: {
+          big(element, binding) {
+            element.innerText = binding.value * 10;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

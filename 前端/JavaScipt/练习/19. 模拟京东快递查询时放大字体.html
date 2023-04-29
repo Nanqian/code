@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        width: 200px;
+        height: 200px;
+        margin: 200px auto;
+      }
+      .bigFontBox {
+        display: none;
+        position: relative;
+        width: 200px;
+        height: 30px;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        font-size: 24px;
+        line-height: 24px;
+      }
+      .bigFontBox::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 26px;
+        left: 25px;
+        width: 10px;
+        height: 10px;
+        border-top: 1px solid rgba(0, 0, 0, 0.2);
+        border-right: 1px solid rgba(0, 0, 0, 0.3);
+        transform: rotate(135deg);
+        background: #fff;
+      }
+      .inputBox {
+        margin-top: 15px;
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="bigFontBox"></div>
+      <form action="">
+        <input type="text" class="inputBox" placeholder="请输入快递单号" />
+      </form>
+    </div>
+
+    <script>
+      let bigFontBox = document.querySelector('.bigFontBox');
+      let inputBox = document.querySelector('.inputBox');
+      document.addEventListener('keyup', function (e) {
+        if (inputBox.focus) {
+          bigFontBox.innerHTML = inputBox.value;
+        }
+      });
+      inputBox.addEventListener('focus', function () {
+        bigFontBox.style.display = 'block';
+      });
+      inputBox.addEventListener('blur', function () {
+        bigFontBox.style.display = 'none';
+      });
+    </script>
+  </body>
+</html>

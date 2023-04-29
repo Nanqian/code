@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //用户输入三个数字
+    let firstNum = prompt('请输入第一个数字'),
+      secondNum = prompt('请输入第二个数字'),
+      thirdNum = prompt('请输入第三个数字');
+    //输出最大的那个数
+    let maxNum = getMax(firstNum, secondNum, thirdNum);
+    console.log(maxNum);
+    function getMax(a, b, c) {
+      return a > b ? a : b > c ? b : c;
+    }
+  </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,1 @@
+async function http(obj){let{method,url,params,data}=obj;let res;if(params){let str=new URLSearchParams(params).toString();url+='?'+str}if(data){res=await fetch(url,{method,headers:{'Content-Type':'application/json'},body:JSON.stringify(data),})}else{res=await fetch(url)}return res.json()}

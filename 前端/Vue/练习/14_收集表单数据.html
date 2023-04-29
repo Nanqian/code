@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="../js/vue.js"></script>
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="root">
+      <form @submit.prevent="demo">
+        账号：<input type="text" v-model="userInfo.account" />
+        <br />
+        <br />
+        密码：<input type="password" v-model="userInfo.password" />
+        <br />
+        <br />
+        年龄：<input type="number" v-model.number="userInfo.age" />
+        <br />
+        <br />
+        性别： 男<input
+          type="radio"
+          name="sex"
+          v-model="userInfo.sex"
+          value="male"
+        />
+        女<input
+          type="radio"
+          name="sex"
+          v-model="userInfo.sex"
+          value="female"
+        />
+        <br />
+        <br />
+        爱好：学习<input
+          type="checkbox"
+          v-model="userInfo.hobby"
+          value="study"
+        />
+        打游戏<input type="checkbox" v-model="userInfo.hobby" value="game" />
+        打篮球<input type="checkbox" v-model="userInfo.hobby" value="ball" />
+        <br />
+        <br />
+        城市：
+        <select v-model="userInfo.city">
+          <option value="">请选择你的城市</option>
+          <option value="beijing">北京</option>
+          <option value="shanghai">上海</option>
+          <option value="guangzhou">广州</option>
+          <option value="shenzhen">深圳</option>
+        </select>
+        <br />
+        <br />
+        其他信息：
+        <br /><textarea cols="30" rows="3" v-model="userInfo.more"></textarea>
+        <br />
+        <br />
+        <input type="checkbox" v-model="userInfo.agree" />
+        请阅读并同意<a href="javascript:;" style="text-decoration: none"
+          >《协议》</a
+        >
+        <br />
+        <br />
+        <button>提交</button>
+      </form>
+    </div>
+
+    <script>
+      const vm = new Vue({
+        el: '#root',
+        data: {
+          userInfo: {
+            account: '',
+            password: '',
+            age: '',
+            sex: '',
+            hobby: [],
+            city: '',
+            more: '',
+            agree: '',
+          },
+        },
+        methods: {
+          demo() {
+            if (!this.userInfo.agree) {
+              alert('请阅读并同意《协议》');
+            } else {
+              console.log(JSON.stringify(this.userInfo));
+            }
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

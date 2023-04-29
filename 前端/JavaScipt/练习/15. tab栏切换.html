@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tab栏切换</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      .tabBox {
+        margin: 50px auto;
+        width: 500px;
+      }
+      .tab_list {
+        width: 500px;
+        height: 30px;
+        border: 1px rgba(0, 0, 0, 0.7) solid;
+        background-color: lightgrey;
+        line-height: 30px;
+        text-align: center;
+      }
+      .tab_list ul {
+        /* li设置成行内元素之后会有空白间隔,用下面这个消除间隔 */
+        letter-spacing: -0.5em;
+      }
+      .tab_list li {
+        display: inline-block;
+        width: 100px;
+        cursor: pointer;
+        letter-spacing: normal;
+        user-select: none;
+      }
+      .tab_content {
+        width: 500px;
+        height: 500px;
+        border: 1px rgba(0, 0, 0, 0.7) solid;
+      }
+      .current {
+        background-color: #ff4757;
+      }
+      .hide {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- tab栏部分 -->
+    <div class="tabBox">
+      <div class="tab_list">
+        <ul>
+          <li class="current">栏目1</li>
+          <li>栏目2</li>
+          <li>栏目3</li>
+          <li>栏目4</li>
+          <li>栏目5</li>
+        </ul>
+      </div>
+      <div class="tab_content">
+        <div class="tab_item">11111111111111</div>
+        <div class="tab_item hide">2222222222222222</div>
+        <div class="tab_item hide">333333333333333</div>
+        <div class="tab_item hide">4444444444444444</div>
+        <div class="tab_item hide">55555555555555555</div>
+      </div>
+    </div>
+
+    <script>
+      let tab_list = document.querySelector('.tab_list').querySelectorAll('li');
+      let tab_content = document.querySelectorAll('.tab_item');
+      for (let i = 0; i < tab_list.length; i++) {
+        tab_list[i].onclick = () => {
+          for (let i = 0; i < tab_list.length; i++) {
+            //当前选择栏排他
+            tab_list[i].classList.remove('current');
+          }
+          tab_list[i].classList.add('current');
+          for (let i = 0; i < tab_content.length; i++) {
+            //栏目内容排他
+            tab_content[i].classList.add('hide');
+          }
+          tab_content[i].classList.remove('hide');
+        };
+      }
+    </script>
+  </body>
+</html>

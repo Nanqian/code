@@ -1,0 +1,41 @@
+@font-face {
+  font-family: 'iconfont'; /* Project id 3520915 */
+  src: url('../iconfont/iconfont.woff2') format('woff2'),
+    url('../iconfont/iconfont.woff') format('woff'),
+    url('../iconfont/iconfont.ttf') format('truetype');
+}
+/*版心*/
+.w {
+  width: 1200px;
+  margin: 0 auto;
+}
+.style_red {
+  color: #c81623;
+}
+
+/*顶部栏*/
+#welcome {
+  height: 31px;
+  background-color: rgb(241, 241, 241);
+  line-height: 31px;
+}
+#welcome span {
+  display: block;
+  margin: 9px 0 11px;
+}
+.topBar ul {
+  float: right;
+}
+.topBar ul li {
+  float: left;
+}
+.topBar ul li:nth-child(even) {
+  width: 1px;
+  height: 12px;
+  background-color: #666;
+  margin: 9px 15px 0;
+}
+.arrow-icon::after {
+  font-family: 'iconfont';
+  content: '&#xe6b9;';
+}

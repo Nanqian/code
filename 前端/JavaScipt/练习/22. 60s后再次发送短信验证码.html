@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="">
+      <input type="number" name="" id="" />
+      <input type="button" value="发送" />
+    </form>
+
+    <script>
+      let sent = document.querySelector('input[type="button"]');
+      sent.addEventListener('click', countdown);
+
+      function countdown() {
+        sent.value = 60;
+        sent.disabled = true;
+        let countdownTimer = window.setInterval(() => {
+          sent.value = sent.value - 1;
+          if (sent.value === '0') {
+            clearInterval(countdownTimer);
+            sent.disabled = false;
+            sent.value = '发送';
+          }
+        }, 1000);
+      }
+    </script>
+  </body>
+</html>

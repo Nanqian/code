@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      input[type='text'] {
+        outline: none;
+        border: none;
+        border-bottom: 2px solid #555;
+      }
+      input[type='text']:focus {
+        border-bottom: 2px solid lightskyblue;
+      }
+
+      /* 关闭广告按钮 */
+      .closeAd {
+        float: left;
+        width: 12px;
+        height: 12px;
+        border: 1px solid black;
+        margin: 3px;
+        text-align: center;
+        line-height: 12px;
+        cursor: pointer;
+        user-select: none;
+      }
+
+      /* 下拉菜单 */
+      .popup {
+        width: 100px;
+        height: 160px;
+        text-align: center;
+        user-select: none;
+      }
+      .list {
+        border: 1px solid #666;
+        display: none;
+      }
+      .popupItem,
+      .listItem {
+        height: 40px;
+        line-height: 40px;
+        cursor: pointer;
+      }
+      .popupItem {
+        background-color: #555;
+        color: white;
+      }
+      .listItem:hover {
+        background-color: #ccc;
+      }
+
+      /* 开/关灯 */
+      .control {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="">
+      <!-- 用户名输入 -->
+      <div>
+        <label for="user"> 用户名 </label>
+        <input type="text" name="" id="user" placeholder="请输入用户名" />
+      </div>
+      <div>
+        <label for="passwd"> 密 码 </label>
+        <input type="text" name="" id="passwd" placeholder="请输入密码" />
+      </div>
+    </form>
+
+    <!-- 广告 -->
+    <div
+      class="ad"
+      style="margin: 10px; position: absolute; right: 15px; bottom: 15px"
+    >
+      <img src="早中晚问候/image/morning.jpg" alt="" />
+      <i class="closeAd">x</i>
+    </div>
+
+    <!-- 下拉菜单 -->
+    <div class="popup" style="position: absolute; top: 10px; left: 300px">
+      <div class="popupItem">菜单</div>
+      <div class="list">
+        <div class="listItem">一个项目</div>
+        <div class="listItem">一个项目</div>
+        <div class="listItem">一个项目</div>
+      </div>
+    </div>
+
+    <!-- 开关灯 -->
+    <button class="control">开/关灯</button>
+
+    <script>
+      //关闭广告
+      const AD = document.querySelector('.ad');
+      const CLOSE_AD_BTN = document.querySelector('.closeAd');
+      CLOSE_AD_BTN.onclick = () => (AD.style.display = 'none');
+
+      // 下拉菜单
+      const POPUP = document.querySelector('.popup');
+      const LIST = document.querySelector('.list');
+      POPUP.onmouseover = () => (LIST.style.display = 'block');
+      POPUP.onmouseout = () => (LIST.style.display = 'none');
+
+      //开关灯
+      const CONTROL = document.querySelector('.control');
+      let lightOn = true;
+      CONTROL.onclick = () => {
+        if (lightOn) {
+          document.body.style.backgroundColor = '#777';
+          lightOn = false;
+        } else {
+          document.body.style.backgroundColor = '#fff';
+          lightOn = true;
+        }
+      };
+    </script>
+  </body>
+</html>

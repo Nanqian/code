@@ -1,0 +1,24 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 100vh;
+  background-color: rgb(161, 100, 223);
+}
+
+button {
+  background: #a164df;
+  margin: 1rem;
+  padding: 1.5rem 3rem;
+  border: none;
+  box-shadow: inset -20px -20px 60px #8955be, inset 20px 20px 60px #b973ff;
+  border-radius: 36px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(0.98);
+}

@@ -1,0 +1,31 @@
+body {
+    background-color: #f4f4f4;
+    color: #555555;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+
+    font:normal 16px Arial,Helvetica,sans-serif;
+    line-height: 1.5em;
+}
+
+.box1 {
+    background-color: antiquewhite;
+    color: blue;
+}
+
+.box1 h1{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 800;
+    font-style: italic;/*斜体*/
+    text-decoration: underline;/*下划线*/
+    text-transform: uppercase;/*大写*/
+    letter-spacing: 1em;/*字间距*/
+    word-spacing: 2em;/*词间距*/
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}

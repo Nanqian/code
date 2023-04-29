@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>重复请求问题</title>
+  </head>
+  <body>
+    <button class="getMessage">点击发送</button>
+
+    <script>
+      const getMessage = document.querySelector('.getMessage');
+      let x = null;
+      //标识变量
+      let isSending = false;
+
+      getMessage.onclick = function () {
+        //判断标识变量来
+        if (isSending) xhr.abort();
+        xhr = new XMLHttpRequest();
+        //修改标识变量的值
+        isSending = true;
+        xhr.open('GET', 'http://127.0.0.1:8000/delay');
+        xhr.send();
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4) {
+            //修改标识变量
+            isSending = false;
+          }
+        };
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: rgb(240, 230, 240);
+      }
+      img {
+        position: fixed;
+        width: 50px;
+        height: 50px;
+        transition: all 0.1s ease;
+        /* transform: rotate(180deg); */
+        /* 设置旋转点 */
+        transform-origin: center right;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="image/38253878_27.gif" alt="" />
+
+    <script>
+      let img = document.querySelector('img');
+      document.addEventListener('mousemove', pigPosition);
+      function pigPosition(e) {
+        img.style.left = `${e.clientX - 52}px`;
+        img.style.top = `${e.clientY - 25}px`;
+      }
+    </script>
+  </body>
+</html>

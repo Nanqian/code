@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>打字效果</title>
+</head>
+
+<body>
+  <style>
+    :root {
+      --typeSpeed: 4s;
+      --text-length: 12;
+      --font-color: #fff;
+    }
+
+    @keyframes typing {
+      from {
+        left: 0;
+      }
+
+      to {
+        left: 100%;
+      }
+    }
+
+    @keyframes blink {
+
+      from,
+      to {
+        background: transparent;
+      }
+
+      50% {
+        background: var(--font-color);
+      }
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: monospace;
+      background-color: #3e3841;
+    }
+
+    h3 {
+      position: relative;
+      color: var(--font-color);
+    }
+
+
+    h3::before,
+    h3::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
+    h3::before {
+      background-color: #3e3841;
+      animation: typing var(--typeSpeed) steps(var(--text-length)) 1s forwards;
+    }
+
+    h3::after {
+      width: 2px;
+      background-color: var(--font-color);
+      animation:
+        typing var(--typeSpeed) steps(var(--text-length)) 1s forwards,
+        blink 1.5s steps(var(--text-length)) infinite;
+
+    }
+  </style>
+
+  <h3 class="heading">这是一一一一段字字字字字字字！</h3>
+
+  <script>
+    const heading = document.querySelector('.heading');
+    document.documentElement.style.setProperty('--text-length', heading.textContent.length);
+  </script>
+</body>
+
+</html>

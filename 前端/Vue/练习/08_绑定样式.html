@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="../js/vue.js"></script>
+    <title>Document</title>
+    <style>
+      .basic {
+        width: 200px;
+        height: 100px;
+        margin-bottom: 10px;
+        border: 3px solid black;
+      }
+      .cl1 {
+        background: lightblue;
+      }
+      .cl2 {
+        background: purple;
+      }
+      .cl3 {
+        background: yellow;
+      }
+      .sy1 {
+        border-radius: 10px;
+      }
+      .sy2 {
+        border-radius: 15px;
+      }
+      .sy3 {
+        border-radius: 25px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="root">
+      <!-- 绑定class样式--字符串写法--适用于：样式的类名不确定，需要动态指定 -->
+      <div class="basic" :class="mod" @click="changeClass">{{name}}</div>
+      <!-- 绑定class样式--数组写法--适用于：要绑定的样式个数不确定、名字也不确定 -->
+      <div class="basic" :class="classArr">{{name}}2</div>
+      <!-- 绑定class样式--对象写法--适用于：要绑定的样式个数确定、名字也确定，但要动态决定用不用 -->
+      <div class="basic" :class="classObj">{{name}}3</div>
+    </div>
+
+    <script>
+      const vm = new Vue({
+        el: '#root',
+        data: {
+          name: '小盒子',
+          mod: 'cl1',
+          classArr: ['cl2', 'sy2'],
+          classObj: {
+            cl1: true,
+            sy3: false,
+          },
+        },
+        methods: {
+          changeClass() {
+            const num = Math.floor(Math.random() * 3);
+            this.mod = ['cl1', 'cl2', 'cl3'][num];
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

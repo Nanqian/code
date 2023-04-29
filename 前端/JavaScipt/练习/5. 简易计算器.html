@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>这是一个简单的小计算器</title>
+</head>
+
+<body>
+  <script>
+    let flag = 1;
+    let result;
+
+    outer: while (flag) {
+      //选择运算法则
+      let calculationWay = prompt(`
+          请选择一个运算：
+            1.加法
+            2.减法
+            3.乘法
+            4.除法
+            0.退出
+    `);
+
+      //选择‘0’或者点击取消（返回null）时退出
+      if (calculationWay == '0' || calculationWay == null) {
+        flag = 0;
+        break outer;
+      }
+
+      //输入数字
+      let firstNum = parseInt(prompt('请输入第一个数')),
+        secondNum = parseInt(prompt('请输入第二个数'));
+      //根据用户的选择执行运算法则
+      switch (calculationWay) {
+      case '1':
+        result = firstNum + secondNum;
+        break;
+      case '2':
+        result = firstNum - secondNum;
+        break;
+      case '3':
+        result = firstNum * secondNum;
+        break;
+      case '4':
+        result = firstNum / secondNum;
+        break;
+      default:
+        alert('好像选了个不存在的方式哦');
+      }
+      //提示结果
+      alert(`结果为：${result}`);
+    }
+  </script>
+</body>
+
+</html>

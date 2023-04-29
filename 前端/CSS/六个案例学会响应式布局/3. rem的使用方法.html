@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>rem的使用方法</title>
+</head>
+<script>
+  let fontChange = () => {
+    let widthNow = document.documentElement.clientWidth;//获取现在的屏幕宽度
+    document.documentElement.style.fontSize = (16 * (widthNow / 320) > 40 ? '40px' : (16 * (widthNow / 320) + 'px'));
+    // console.log (setFontSize)
+  }
+  window.addEventListener('load', fontChange);
+  window.addEventListener('resize', fontChange);
+</script>
+<style>
+  span {
+    font-size: 1rem;
+  }
+</style>
+<body>
+  <span>123</span>
+</body>
+</html>

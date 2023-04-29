@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AJAX IE缓存问题</title>
+  </head>
+  <body>
+    <button class="getMessage">点击发送</button>
+    <button class="cancel">点击取消</button>
+
+    <script>
+      const getMessage = document.querySelector('.getMessage');
+      const cancel = document.querySelector('.cancel');
+      let x = null;
+
+      getMessage.onclick = function () {
+        xhr = new XMLHttpRequest();
+        xhr.open('GET', 'http://127.0.0.1:8000/delay');
+        xhr.send();
+      };
+      cancel.onclick = function () {
+        xhr.abort();
+      };
+    </script>
+  </body>
+</html>

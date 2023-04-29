@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(246, 247, 251);
+}
+
+.container {
+  width: 350px;
+  height: 103px;
+  text-align: center;
+}
+
+.progress-container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.progress-container::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 350px;
+  height: 4px;
+  background-color: rgb(224, 224, 224);
+  z-index: -1;
+}
+
+.progress {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 4px;
+  background-color: #3498db;
+  transition: all 0.4s ease;
+  z-index: -1;
+}
+
+.step {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border: 3px solid rgb(224, 224, 224);
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255);
+  color: #999;
+  font-size: 14px;
+  transition: all 0.4s ease;
+}
+
+.active {
+  border-color: #3498db;
+}
+
+button {
+  margin: 5px;
+  padding: 8px 30px;
+  border: 0;
+  border-radius: 6px;
+  background-color: rgb(52, 152, 219);
+  font-size: 14px;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: rgb(224, 224, 224);
+  cursor: not-allowed;
+}
+
+/* 鼠标点击动画 */
+button:active {
+  transform: scale(0.98);
+}
+button:disabled:active {
+  transform: scale(1);
+}

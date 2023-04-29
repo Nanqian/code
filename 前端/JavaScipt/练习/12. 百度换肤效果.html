@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>百度换肤效果</title>
+
+    <style>
+      body {
+        background: url('bj/bj1.jpg') no-repeat center top;
+      }
+      .backgroundBox {
+        position: absolute;
+        top: 20px;
+        left: 400px;
+      }
+      .backgroundBox img {
+        width: 150px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="backgroundBox">
+      <img src="bj/bj1.jpg" alt="" class="backgroundBtn" />
+      <img src="bj/bj2.jpg" alt="" class="backgroundBtn" />
+      <img src="bj/bj3.jpg" alt="" class="backgroundBtn" />
+      <img src="bj/bj4.jpg" alt="" class="backgroundBtn" />
+    </div>
+
+    <script !src="">
+      let backgroundBtns = document.querySelectorAll('.backgroundBtn');
+      for (let i = 0; i < backgroundBtns.length; i++) {
+        backgroundBtns[i].onclick = function () {
+          document.body.style.backgroundImage = `url('${this.src}')`;
+        };
+      }
+    </script>
+  </body>
+</html>
